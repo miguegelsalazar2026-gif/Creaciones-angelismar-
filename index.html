@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creaciones Angelismar | Catálogo</title>
     <style>
-        body { font-family: sans-serif; background: #000; color: #fff; padding: 20px; text-align: center; }
-        .producto { border: 1px solid #d4af37; padding: 15px; margin: 10px; border-radius: 10px; }
+        /* Fondo animado */
+        @keyframes gradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        body { 
+            font-family: sans-serif; 
+            background: linear-gradient(-45deg, #000, #1a1a1a, #261f00, #000);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: #fff; padding: 20px; text-align: center; 
+        }
+        .producto { border: 1px solid #d4af37; padding: 15px; margin: 10px; border-radius: 10px; background: rgba(0,0,0,0.6); }
         img { width: 100%; max-width: 250px; border-radius: 10px; background: white; }
         button { background: #d4af37; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; border-radius: 5px; margin-top: 10px; }
         .pago { background: #1a1a1a; padding: 15px; border-radius: 10px; margin-top: 20px; border: 1px dashed #d4af37; }
@@ -16,6 +28,15 @@
 
     <img src="1774909398791.png" alt="Logo">
     <h1>Creaciones Angelismar</h1>
+    
+    <div style="background: rgba(34,34,34,0.8); padding: 15px; border-radius: 10px; margin: 10px; border: 1px solid #d4af37;">
+        <p style="font-size: 1.1em; color: #d4af37; margin: 5px;">✨ <b>"Estamos aquí para hacer tus sueños realidad"</b></p>
+        <p style="font-size: 0.9em; margin: 5px;">📍 San Carlos, Cojedes, Venezuela</p>
+        <hr style="border: 0; border-top: 1px solid #444; margin: 10px 0;">
+        <p style="font-size: 0.9em; margin: 5px;">✅ <b>Ventas a Crédito</b></p>
+        <p style="font-size: 0.8em; margin: 5px;">Paga inicial del 50% y financia el resto en 3 cuotas quincenales.</p>
+        <p style="font-size: 0.8em; margin: 5px;">⏳ <b>Tiempo de fabricación:</b> 10 a 15 días hábiles.</p>
+    </div>
 
     <div id="catalogo">
         <div class="producto">
