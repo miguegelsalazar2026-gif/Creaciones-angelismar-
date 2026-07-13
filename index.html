@@ -1,1 +1,98 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creaciones Angelismar | Catálogo</title>
+    <style>
+        body { font-family: sans-serif; background: #000; color: #fff; padding: 20px; text-align: center; }
+        .producto { border: 1px solid #d4af37; padding: 15px; margin: 10px; border-radius: 10px; }
+        img { width: 100%; max-width: 250px; border-radius: 10px; background: white; }
+        button { background: #d4af37; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; border-radius: 5px; margin-top: 10px; }
+        .pago { background: #1a1a1a; padding: 15px; border-radius: 10px; margin-top: 20px; border: 1px dashed #d4af37; }
+    </style>
+</head>
+<body>
+
+    <img src="1774909398791.jpg" alt="Logo">
+    <h1>Creaciones Angelismar</h1>
+
+    <div id="catalogo">
+        <div class="producto">
+            <img src="1783981046568.jpg">
+            <h3>Cama Confort - $230</h3>
+            <button onclick="calcular(230, 'Cama Confort')">Seleccionar</button>
+        </div>
+        <div class="producto">
+            <img src="1783981139256.jpg">
+            <h3>Cama Confort - $230</h3>
+            <button onclick="calcular(230, 'Cama Confort')">Seleccionar</button>
+        </div>
+        <div class="producto">
+            <img src="1783981199115.jpg">
+            <h3>Sofá Sherlon - $360</h3>
+            <button onclick="calcular(360, 'Sofá Sherlon')">Seleccionar</button>
+        </div>
+        <div class="producto">
+            <img src="1783981279375.jpg">
+            <h3>Vanity - $230</h3>
+            <button onclick="calcular(230, 'Vanity')">Seleccionar</button>
+        </div>
+        <div class="producto">
+            <img src="1783981457070.jpg">
+            <h3>Cama Confort con Gavetero - $340</h3>
+            <button onclick="calcular(340, 'Cama Confort con Gavetero')">Seleccionar</button>
+        </div>
+        <div class="producto">
+            <img src="1783981481165.jpg">
+            <h3>Mesa Manicura - $160</h3>
+            <button onclick="calcular(160, 'Mesa Manicura')">Seleccionar</button>
+        </div>
+        <div class="producto">
+            <img src="1783981595429.jpg">
+            <h3>Cama Premium - $280</h3>
+            <button onclick="calcular(280, 'Cama Premium')">Seleccionar</button>
+        </div>
+        <div class="producto">
+            <img src="1783981683673.jpg">
+            <h3>Cama Premium - $280</h3>
+            <button onclick="calcular(280, 'Cama Premium')">Seleccionar</button>
+        </div>
+    </div>
+
+    <div id="resumen" style="display:none;" class="producto">
+        <h2>Tu Factura</h2>
+        <p id="total"></p>
+        <p id="inicial"></p>
+        <p id="cuotas"></p>
+        
+        <div class="pago">
+            <h3>Datos para Pago Móvil</h3>
+            <p>Banco: 0102 (Venezuela)</p>
+            <p>Tel: 0412-2380482</p>
+            <p>CI: 17891913</p>
+        </div>
+        <button onclick="enviarWhatsApp()">Reportar Pago por WhatsApp</button>
+    </div>
+
+    <script>
+        let total = 0;
+        let nombreProd = "";
+        function calcular(precio, nombre) {
+            total = precio;
+            nombreProd = nombre;
+            document.getElementById('resumen').style.display = 'block';
+            document.getElementById('total').innerText = "Total: $" + total;
+            document.getElementById('inicial').innerText = "Inicial (50%): $" + (total * 0.5);
+            document.getElementById('cuotas').innerText = "3 cuotas quincenales de: $" + ((total * 0.5) / 3).toFixed(2);
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+        function enviarWhatsApp() {
+            let msg = `Hola, quiero pedir: ${nombreProd}. Total: $${total}. Inicial a pagar: $${total * 0.5}. Referencia de pago: ___________`;
+            window.open('https://wa.me/584122380482?text=' + encodeURIComponent(msg));
+        }
+    </script>
+</body>
+          </html>
+  
